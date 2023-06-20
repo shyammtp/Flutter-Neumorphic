@@ -73,7 +73,7 @@ class NeumorphicApp extends StatelessWidget {
   }) : super(key: key);
 
   ThemeData _getMaterialTheme(NeumorphicThemeData theme) {
-    final color = theme.accentColor;
+    final color = theme.colorScheme.secondary;
 
     if (color is MaterialColor) {
       return ThemeData(
@@ -85,12 +85,12 @@ class NeumorphicApp extends StatelessWidget {
     }
 
     return ThemeData(
-      primaryColor: theme.accentColor,
+      primaryColor: theme.colorScheme.secondary,
       accentColor: theme.variantColor,
       iconTheme: theme.iconTheme,
       brightness: ThemeData.estimateBrightnessForColor(theme.baseColor),
       primaryColorBrightness:
-          ThemeData.estimateBrightnessForColor(theme.accentColor),
+          ThemeData.estimateBrightnessForColor(theme.colorScheme.secondary),
       accentColorBrightness:
           ThemeData.estimateBrightnessForColor(theme.variantColor),
       textTheme: theme.textTheme,
